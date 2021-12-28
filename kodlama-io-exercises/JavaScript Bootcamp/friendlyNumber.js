@@ -18,9 +18,7 @@ function friendlyNumber(x, y) {
 
   if (arrx.length > 0 && arry.length > 0) {
     let resx = arrx.reduce(reducer);
-    console.log(resx)
     let resy = arry.reduce(reducer);
-    console.log(resy)
     if (resx === y && resy === x) {
       console.log("Girilen sayılar arkadaş sayıdır.");
     } else {
