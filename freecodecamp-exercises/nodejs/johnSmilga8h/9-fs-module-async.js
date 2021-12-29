@@ -20,8 +20,9 @@ readFile("./content/first.txt", "utf-8", (err, res) => {
           console.log(err);
           return;
         }
-        console.log(res);
+        console.log("Done with this task");
       }
     );
   });
 });
+console.log("Starting next task");
