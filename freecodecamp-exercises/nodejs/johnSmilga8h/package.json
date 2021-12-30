@@ -2,7 +2,7 @@
   "name": "johnsmilga8h",
   "version": "1.0.0",
   "description": "",
-  "main": "1-globals.js",
+  "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
   },
