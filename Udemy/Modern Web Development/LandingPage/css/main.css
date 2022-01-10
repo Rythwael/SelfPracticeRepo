@@ -10,6 +10,7 @@ a{
 html{
     font-family: "Open Sans",sans-serif;
 }
+/* Nav Bar */
 #navbar{
     color: white;
     display: flex;
@@ -26,9 +27,107 @@ html{
 #navbar ul li a{
     padding: 0.5rem;
 }
-
 #navbar ul li a:hover{
     background: #336ea2;
     border-radius: 5px;
 }
+/* Home Section */
+#logo{
+    width: 300px;
+}
+
+#home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid grey;
+}
+#home img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 100%;
+}
+#home .name h2{
+    margin-bottom: 0.3rem;
+}
+#home .name p{
+    opacity: 0.7;
+    font-style: italic;
+}
+/* Training */
+#training{
+    color: white;
+    padding: 1rem;
+}
+#training .items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#training .items .item{
+    width: 33%;
+    text-align: center;
+    padding: 0.4rem;
+}
+#training .items .item:hover{
+    color: rgb(231, 41, 41);
+    opacity: 0.7;
+}
+
+/* Courses */
+#courses{
+    color: #333;
+    padding: 1rem;
+}
+.courses{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.course{
+    display: flex;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+
+}
+.courses .course .course-image{
+    margin-right: 0.5rem;
+    position: relative;
+}
+.courses .course .course-image img{
+    border-radius: 50px;
+}
+.courses .course .course-image span{
+    background: red;
+    padding: 0.25rem;
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+.courses .course .course-info{
+    letter-spacing: 1.2px;
+    margin-bottom: 0.2rem;
+}
+.courses .course .course-info .title{
+    font-weight: 700;
+    color: blue;
+}
+.courses .course .course-info .description{
+    opacity: 0.7;
+}
+.courses .course .course-info .instructor{
+    opacity: 0.8;
+    color: green;
+}
+.courses .course .course-info .rating{
+    font-weight: 700;
+    opacity: 0.8;
+    color: red;
+}
+
+
 
