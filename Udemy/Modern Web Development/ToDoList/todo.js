@@ -11,17 +11,61 @@ eventListeners();
 
 function eventListeners(){
     form.addEventListener("submit",addTodo);
+    document.addEventListener("DOMContentLoaded",loadAllTodosToUI);
+    secondCardBody.addEventListener("click",deleteTodo);
+}
+function deleteTodo(e){
+    if(e.target.className === "fa fa-remove"){
+        e.target.parentElement.parentElement.remove();
+        deleteTodoFromStorage(e.target.parentElement.parentElement.textContent)
+        showAlert("success","Todo başarıyla silindi.")
+    }
+}
+
+function deleteTodoFromStorage(deleteTodo){
+    let todos = getTodoFromStorage();
+    todos.forEach(function(todo,index){
+        if(todo === deleteTodo){
+            todos.splice(index,1);// Arrayden silinecek todonun indexinden sonra 1 tane (yani kendisini) sil.
+        }
+    })
+    localStorage.setItem("todos",JSON.stringify(todos));
+}
+function loadAllTodosToUI(){
+    let todos = getTodoFromStorage();
+    todos.forEach(function(todo){
+        addTodoToUI(todo);
+    })
 }
 
 function addTodo(e){
     const newToDo = todoInput.value.trim(); //trim() baştaki ve sonraki boşlukları siler.
+    let todos = getTodoFromStorage();
     if(newToDo === ""){
         showAlert("danger", "Lütfen bir todo girin!");
+    }else if(todos.includes(newToDo)){
+        showAlert("danger", "Yazılan Todo zaten mevcut!")
     }else{
         addTodoToUI(newToDo);
+        addTodoToStorage(newToDo);
         showAlert("success", "Başarıyla eklendi!");
     }
     e.preventDefault();
+}
+
+function getTodoFromStorage(){
+    let todos;
+    if(localStorage.getItem("todos") === null){
+        todos = [];
+    }else{
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    return todos;
+}
+function addTodoToStorage(newTodo){
+    let todos = getTodoFromStorage();
+    todos.push(newTodo);
+    localStorage.setItem("todos",JSON.stringify(todos));
 }
 
 function showAlert(type,message){
@@ -31,7 +75,7 @@ function showAlert(type,message){
     firstCardBody.appendChild(alert);
     setTimeout(function(){
         alert.remove();
-    },3000)
+    },2000)
 
 
 }
