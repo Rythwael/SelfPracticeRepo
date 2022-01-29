@@ -13,7 +13,16 @@ function eventListeners(){
     form.addEventListener("submit",addTodo);
     document.addEventListener("DOMContentLoaded",loadAllTodosToUI);
     secondCardBody.addEventListener("click",deleteTodo);
-    filter.addEventListener("keyup",filterTodos)
+    filter.addEventListener("keyup",filterTodos);
+    clearButton.addEventListener("click",clearAllTodos);
+}
+function clearAllTodos(e){
+    if(confirm("Emin Misiniz?")){
+        while(todoList.firstElementChild != null){
+            todoList.removeChild(todoList.firstElementChild)
+        }
+    localStorage.removeItem("todos");
+    }
 }
 function filterTodos(e){
     const filterValue = e.target.value.toLowerCase();
