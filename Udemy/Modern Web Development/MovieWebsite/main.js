@@ -7,11 +7,19 @@ const urlElement = document.querySelector("#url");
 
 const ui = new UI();
 
+//Storage Objesini Üret
+
+const storage = new Storage();
+
 //Tüm eventleri yükleme
 
 eventListeners();
 function eventListeners(){
     form.addEventListener("submit",addFilm);
+    document.addEventListener("DOMContentLoaded",function(){
+        let films = storage.getFilmsFromStorage();
+        ui.loadAllFilms(films);
+    })
 }
 function addFilm(e){
     const title = titleElement.value;
@@ -25,6 +33,9 @@ function addFilm(e){
         //Yeni Film oluşturma
         const newFilm = new Film(title,director,url);
         ui.addFilmToUI(newFilm); // Arayüze film ekleme
+        storage.addFilmToStorage(newFilm); // Filmi local storageye ekle.
+        ui.displayMessages("Film Başarıyla Eklendi!","success");
+
     }
     ui.clearInputs(titleElement,directorElement,urlElement);
 
