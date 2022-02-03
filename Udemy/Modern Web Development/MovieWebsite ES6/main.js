@@ -22,11 +22,20 @@ function addFilm(e){
     const title = titleElement.value;
     const director = directorElement.value;
     const url = urlElement.value;
+    let films = Storage.getFilmsFromStorage();
+    let filmsTitle = [];
+    films.forEach((film)=>{
+        filmsTitle.push(film.title)
+    })
 
     if(title === "" || director ==="" || url === ""){
         //Error
         UI.displayMessages("Tüm alanları doldurun!","danger")
-    }else{
+    }
+    else if(filmsTitle.includes(title)){
+        UI.displayMessages("Belirtilen film sistemimizde mevcuttur.","info")
+    }
+    else{
         //Yeni Film oluşturma
         const newFilm = new Film(title,director,url);
         UI.addFilmToUI(newFilm); // Arayüze film ekleme
