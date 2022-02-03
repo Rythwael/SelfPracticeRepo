@@ -23,6 +23,7 @@ function eventListeners(){
     });
     cardBody.addEventListener("click",deleteFilm);
 }
+//Add Film
 function addFilm(e){
     const title = titleElement.value;
     const director = directorElement.value;
@@ -43,9 +44,11 @@ function addFilm(e){
 
     e.preventDefault();
 }
+//Delete film
 function deleteFilm(e){
     if(e.target.id === "delete-film"){
         ui.deleteFilmFromUI(e.target);
+        storage.deleteFilmFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+        ui.displayMessages("Silme işlemi tamamlandı.","success")
     }
-    console.log(e.target);
 }
