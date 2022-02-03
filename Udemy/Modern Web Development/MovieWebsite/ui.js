@@ -28,6 +28,7 @@ UI.prototype.displayMessages = function(message,type){
         div.remove(); // 2 Saniye sonra alert mesajını sil.
     },2000)
 }
+// Storage'daki Filmleri UI'da gösterme
 UI.prototype.loadAllFilms = function(films){
     const filmList = document.getElementById("films");
     films.forEach((film)=>{
@@ -40,4 +41,7 @@ UI.prototype.loadAllFilms = function(films){
         </tr>
         `
     })
+}
+UI.prototype.deleteFilmFromUI = function(element){
+    element.parentElement.parentElement.remove();
 }
