@@ -1,6 +1,7 @@
 function UI(){
 
 }
+//UI'a film ekleme
 UI.prototype.addFilmToUI = function(newFilm){
     const filmList = document.getElementById("films");
     filmList.innerHTML += `
@@ -12,11 +13,13 @@ UI.prototype.addFilmToUI = function(newFilm){
     </tr>
     `
 }
+//İnputları temizleme
 UI.prototype.clearInputs = function(element1,element2,element3){
     element1.value = "";
     element2.value = "";
     element3.value = "";
 }
+//UI'da mesaj gösterme
 UI.prototype.displayMessages = function(message,type){
     const cardBody = document.querySelector(".card-body");
     //Alert div oluşturma
@@ -42,6 +45,15 @@ UI.prototype.loadAllFilms = function(films){
         `
     })
 }
+//UI'dan film silme
 UI.prototype.deleteFilmFromUI = function(element){
     element.parentElement.parentElement.remove();
+}
+//UI'dan tüm filmleri silme
+UI.prototype.clearAllFilmsFromUI = function(){
+    const filmList = document.getElementById("films");
+    //filmList.innerHTML = "";     Böyle yapabiliriz fakat efektif değil.
+    while(filmList.firstElementChild !== null){ // Child olduğu sürece
+        filmList.firstElementChild.remove();
+    }
 }
