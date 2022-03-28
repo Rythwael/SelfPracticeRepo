@@ -12,5 +12,6 @@ function eventListeners(){
 }
 
 function exchangeCurrency(){
+    currency.changeAmount(amountElement.value);
     currency.exchange();
 }

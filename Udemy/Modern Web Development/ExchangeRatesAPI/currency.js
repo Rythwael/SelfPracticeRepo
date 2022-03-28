@@ -7,14 +7,19 @@ class Currency {
     exchange(){
         fetch(this.url + this.targetCurrency)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            const exchangeValue = data.rates[this.targetCurrency]
+            const inputAmount = Number(this.amount)
+            let total = exchangeValue*inputAmount;
+            console.log(total);
+        })
         .catch(err => console.log(err))
     }
     changeAmount(amount){
         this.amount = amount;
     }
     changeTargetCurrency(newTargetCurrency){
-        currency.changeAmount(amountElement.value);
+        
         this.targetCurrency = newTargetCurrency;
     }
 }
