@@ -5,21 +5,23 @@ class Currency {
         this.amount = null;
     }
     exchange(){
-        fetch(this.url + this.targetCurrency)
-        .then(response => response.json())
-        .then(data => {
-            const exchangeValue = data.rates[this.targetCurrency]
-            const inputAmount = Number(this.amount)
-            let total = exchangeValue*inputAmount;
-            console.log(total);
+        return new Promise((resolve,reject)=>{
+            fetch(this.url + this.targetCurrency)
+            .then(response => response.json())
+            .then(data => {
+                const exchangeValue = data.rates[this.targetCurrency]
+                const inputAmount = Number(this.amount)
+                let total = exchangeValue*inputAmount;
+                resolve(total);
+            })
+            .catch(err => reject(err))
         })
-        .catch(err => console.log(err))
+        
     }
     changeAmount(amount){
         this.amount = amount;
     }
     changeTargetCurrency(newTargetCurrency){
-        
         this.targetCurrency = newTargetCurrency;
     }
 }
