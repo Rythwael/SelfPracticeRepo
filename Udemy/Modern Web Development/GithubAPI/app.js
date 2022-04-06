@@ -3,6 +3,9 @@ const githubForm = document.getElementById("github-form");
 const nameInput = document.getElementById("github-name");
 const clearButton = document.getElementById("clear-last-users");
 const lastUsers = document.getElementById("last-users");
+const github = new Github();
+const ui = new UI();
+
 
 eventListeners();
 
@@ -13,7 +16,24 @@ function eventListeners(){
 }
 
 function getData(e){
+    let username = nameInput.value
+    if(username === ""){
+        alert("Lütfen geçerli bir kullanıcı adı giriniz")
+    }
+    else{
 
+        github.getGithubData(username)
+        .then(response => {
+            if(response.user.message === "Not Found"){
+                alert("Girilen kullanıcı adına ait bir hesap bulunamadı")
+            }else{
+                ui.showUserInfo(response.user);
+            }
+        }
+            )
+        .catch(err => console.log(err))
+    }
+    ui.clearInput();
     e.preventDefault();
 }
 
