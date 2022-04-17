@@ -28,6 +28,7 @@ function getData(e){
                 ui.showError("Kullanıcı bulunamadı")
             }else{
                 ui.showUserInfo(response.user);
+                ui.showRepoInfo(response.repo);
             }
         }
             )
