@@ -1,0 +1,49 @@
+/* Etiket  */
+/* h1{ 
+    color: red;
+    background-color: rgb(65, 225, 177);
+} */
+
+/* id */
+/* #logo{
+    color: slateblue;
+    background-color: springgreen;
+} */
+
+/* class */
+/* .info{
+    color:yellow;
+    background-color: violet;
+} */
+
+/* id'si logo olanları ve classı lead olanların hepsini seç */
+/* #logo, .lead{
+    color: chocolate;
+    background-color: cyan;
+} */
+
+/* id'si para1 olanların içinde classı bas1 olanlar */
+/* #para1.bas1{
+    color: darkcyan;
+    background-color: darkgreen;
+} */
+
+/* a tagı text-decoration: underline olarak default gelir. */
+/* a{
+    text-decoration: none; 
+} */
+
+/* ul>li nin içindeki a etiketleri */
+ul li a{
+    text-decoration: none;
+}
+
+/* parent class info olan span etiketleri */
+.info span{
+    background-color: darkkhaki;
+}
+
+/* * işareti tüm elemanları seçer. */
+*{
+    font-size: 30px;
+}

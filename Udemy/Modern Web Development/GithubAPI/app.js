@@ -5,6 +5,7 @@ const clearButton = document.getElementById("clear-last-users");
 const lastUsers = document.getElementById("last-users");
 const github = new Github();
 const ui = new UI();
+const storage = new Storage();
 
 
 eventListeners();
@@ -27,6 +28,7 @@ function getData(e){
             if(response.user.message === "Not Found"){
                 ui.showError("Kullanıcı bulunamadı")
             }else{
+                Storage.addSearchedUserToStorage(username);
                 ui.showUserInfo(response.user);
                 ui.showRepoInfo(response.repo);
             }
