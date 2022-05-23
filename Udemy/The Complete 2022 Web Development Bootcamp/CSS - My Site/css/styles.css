@@ -1,6 +1,7 @@
 body{
     margin: 0px;
     text-align: center;
+    color: #40514E;
 }
 .span-music{
     text-decoration: underline;
@@ -24,6 +25,7 @@ h2{
     font-size: 2.5rem;
     color: #66BFBF;
     font-weight: normal;
+    padding-bottom: 1rem;
 }
 h3,a{
     color: #11999E;
@@ -36,6 +38,9 @@ h3,a{
     margin: 0px;
     position: relative;
     padding-top: 300px;
+}
+.middle-container{
+    margin: 6rem 0;
 }
 .bottom-container{
     background-color: #66BFBF;
@@ -67,12 +72,14 @@ hr{
     border-top-style: dotted;
     border-color: rgb(142, 196, 142);
     border-width: 0.5rem;
-    margin: 0 auto;
+    margin: 2rem auto;
     clear: both;
     height: 200%;
 }
 .profile-description{
     color: #40514E;
+    width: 30%;
+    margin: auto;
 }
 .btn {
     background:  #11cdd4;
@@ -107,6 +114,14 @@ hr{
 .contact-me{
     line-height: 2;
 }
+.contact-me-msg{
+    width: 40%;
+    margin: 2.5rem auto 3.5rem;
+}
 .footer-link{
     margin: 1rem;
+    text-decoration: none;
+}
+.footer-link:hover{
+    color: #eaf6f6;
 }
