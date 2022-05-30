@@ -32,8 +32,10 @@ h1{
     font-weight: 400;
 }
 .iphone-img{
-    width: 60%;
-    transform: rotate(20deg);
+    width: 30%;
+    right: 10%;
+    transform: rotate(25deg);
+    position: absolute;
 }
 .feature-item>h3{
     font-family: "Montserrat";
@@ -43,6 +45,8 @@ h1{
 #features{
     padding: 7% 15%;
     text-align: center;
+    background-color: white;
+    position: relative;
 }
 
 #features>p{
@@ -89,4 +93,48 @@ h2{
 }
 .pricing-column{
     padding: 3% 2%;
+}
+
+@media (max-width:1028px){
+    #title{
+        text-align: center;
+    }
+    .iphone-img{
+        position: static;
+        transform: rotate(0);
+        width: 60%;
+    }
+}
+
+#cta{
+    background-color: #ff4c68;
+    text-align: center;
+}
+.cta-header{
+    font-family: "Montserrat";
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 1.5;
+    color: #fff;
+    padding: 5% 15%;
+}
+.cta-btn{
+    margin: 1rem;
+}
+.icon-app{
+    color: white;
+}
+.icon-play{
+    color: black;
+}
+#footer{
+    background-color: #fff;
+    text-align: center;
+}
+.footer-icon{
+    color: black;
+    margin: 0 1rem;
+}
+.copyright{
+    color: #8f8f8f;
 }
