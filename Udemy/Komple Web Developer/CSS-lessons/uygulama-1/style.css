@@ -1,0 +1,20 @@
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  text-align: center;
+  font-size: 16px;
+}
+
+.done {
+  text-decoration: line-through;
+  background-color: #ebe645;
+}
+
+.not_done {
+  background-color: #344cb7;
+}
+
+div {
+}
