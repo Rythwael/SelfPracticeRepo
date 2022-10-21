@@ -78,6 +78,10 @@ nav {
   color: #3c4048;
 }
 
+.footer-contents {
+  padding: 5px;
+}
+
 .footer-content {
   display: inline-block;
   width: 30%;
