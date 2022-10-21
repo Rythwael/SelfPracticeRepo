@@ -1,0 +1,32 @@
+.title {
+  background-color: rgb(136, 85, 184);
+  color: rgb(235, 187, 99);
+  padding: 10px 15px;
+}
+
+main {
+  padding: 10px;
+  margin: 0 0 20px 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.left-content {
+  float: left;
+  width: 33%;
+  height: 200px;
+}
+
+.right-content {
+}
+
+h3 {
+  background-color: blueviolet;
+  padding: 5px;
+  color: #fff;
+  margin-right: 15px;
+}
