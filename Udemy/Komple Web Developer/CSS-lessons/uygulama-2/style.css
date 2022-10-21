@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+}
+header {
+  background-color: #fc997c;
+  padding: 8px 16px;
+}
+
+.title {
+  color: #fff;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+.title {
+  display: inline-block;
+}
+
+nav {
+  display: inline-block;
+  width: calc(100% - 99px);
+  text-align: right;
+}
+
+.container {
+  margin: 0;
+  padding: 10px;
+  background-color: #2e4c6d;
+  height: 500px;
+  width: 100%;
+}
+
+.nav-item a {
+  display: inline-block;
+  margin: 0 8px;
+  text-decoration: none;
+  color: #fff;
+}
+.nav-items {
+  margin: 0 10px;
+}
+
+.nav-items a:hover {
+  color: #2e4c6d;
+}
+.nav-items a:active {
+  color: #fff;
+}
+
+.nav-item::before {
+  content: "\2022";
+  color: #fff;
+}
+.nav-item:hover::before {
+  color: #2e4c6d;
+}
+.nav-item:active::before {
+  color: #fff;
+}
+
+.how-it-works {
+  background-color: #fc997c;
+  padding: 10px;
+}
