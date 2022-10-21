@@ -33,6 +33,8 @@ nav {
   background-color: #2e4c6d;
   height: 500px;
   width: 100%;
+  background-image: url(https://images.unsplash.com/photo-1548217395-6c6095abb49c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80);
+  background-position: center;
 }
 
 .nav-item a {
@@ -70,7 +72,13 @@ nav {
   color: black;
 }
 
-.how-it-works {
-  background-color: #fc997c;
+.footer {
   padding: 10px;
+  text-align: center;
+  color: #3c4048;
+}
+
+.footer-content {
+  display: inline-block;
+  width: 30%;
 }
