@@ -104,6 +104,7 @@ nav {
 .first {
   background: url(https://wallpaperaccess.com/full/329583.jpg);
   background-position: top left;
+  height: 430px;
 }
 
 .desc {
@@ -132,7 +133,7 @@ nav {
 
 .subs {
   text-align: center;
-  padding: 0 15%;
+  padding: 0 10%;
 }
 
 .float {
@@ -142,10 +143,23 @@ nav {
 
 .recom {
   margin: 0 1%;
+  background-color: #5f9df7;
+  border-radius: 5px;
+}
+
+.recom-title {
+  color: #fc997c;
+  background-color: #edf5f7;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
+}
+
+.pad {
+  padding: 10px 10px;
 }
