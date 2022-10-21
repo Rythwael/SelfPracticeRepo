@@ -73,7 +73,11 @@ nav {
 }
 
 .footer {
-  padding: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-title {
   text-align: center;
   color: #3c4048;
 }
@@ -83,7 +87,45 @@ nav {
 }
 
 .footer-content {
+  text-align: center;
+  color: #3c4048;
   display: inline-block;
   width: 30%;
   padding: 5px;
+}
+
+.col-2 {
+  display: inline-block;
+  height: 350px;
+  width: calc(43% - 2px);
+  vertical-align: top;
+}
+
+.first {
+  background: url(https://wallpaperaccess.com/full/329583.jpg);
+  background-position: top left;
+}
+
+.desc {
+  background-color: #edf5f7;
+  padding: 40px;
+}
+
+.desc a {
+  background-color: #fc997c;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 7px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #fc997c;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.desc a:hover {
+  background-color: #fff;
+  color: #fc997c;
+  border: 1px solid #2e4c6d;
 }
