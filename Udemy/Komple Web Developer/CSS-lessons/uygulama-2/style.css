@@ -52,15 +52,22 @@ nav {
   color: #fff;
 }
 
-.nav-item::before {
-  content: "\2022";
-  color: #fff;
-}
 .nav-item:hover::before {
   color: #2e4c6d;
 }
 .nav-item:active::before {
   color: #fff;
+}
+
+.nav-login a {
+  background-color: #2e4c6d;
+  padding: 5px 12px;
+  border-radius: 7px;
+  border: 1px solid #fff;
+}
+.nav-login a:hover {
+  background-color: #fff;
+  color: black;
 }
 
 .how-it-works {
