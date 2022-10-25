@@ -28,10 +28,6 @@ function displayTasks() {
     }
 }
 
-function editTask(id) {
-    console.log(id);
-}
-
 addBtn.addEventListener("click", function (event) {
     let isHas = false;
     let task = document.querySelector("#task-input");
@@ -79,16 +75,19 @@ clearBtn.addEventListener("click", function (event) {
     event.preventDefault();
 });
 
+function editTask(id) {
+    console.log(id);
+}
 
 
 
 function deleteTask(id) {
     let deletedIndex;
-    for (let index in taskList) {
-        if (taskList[index].id === id) {
-            deletedIndex = index;
-        }
-    }
+
+
+    deletedIndex = taskList.findIndex(function (task) {
+        return task.id == id;
+    })
     taskList.splice(deletedIndex, 1);
     if (ul.hasChildNodes()) {
         ul.removeChild(ul.children[deletedIndex]);
