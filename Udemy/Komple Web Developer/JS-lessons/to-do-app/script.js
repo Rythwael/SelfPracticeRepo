@@ -84,10 +84,10 @@ function editTask(id) {
 function deleteTask(id) {
     let deletedIndex;
 
-
     deletedIndex = taskList.findIndex(function (task) {
         return task.id == id;
     })
+
     taskList.splice(deletedIndex, 1);
     if (ul.hasChildNodes()) {
         ul.removeChild(ul.children[deletedIndex]);
