@@ -11,7 +11,7 @@ const audio = document.querySelector("#audio");
 
 
 window.addEventListener("load", () => {
-    let currentlyPlaying = musicPlayer.getMusic();
+    let currentlyPlaying = musicPlayer.getSong();
     displaySong(currentlyPlaying);
 })
 

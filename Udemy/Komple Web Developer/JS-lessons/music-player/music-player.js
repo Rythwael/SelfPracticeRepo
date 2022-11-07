@@ -4,7 +4,7 @@ class MusicPlayer {
         this.index = 0;
     }
 
-    getMusic() {
+    getSong() {
         return this.songs[this.index];
     }
 
