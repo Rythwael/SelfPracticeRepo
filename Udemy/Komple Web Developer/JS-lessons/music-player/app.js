@@ -8,12 +8,16 @@ const prev = document.querySelector("#prev");
 const play = document.querySelector("#play");
 const next = document.querySelector("#next");
 const audio = document.querySelector("#audio");
+const duration = document.querySelector("#duration");
+const currentTime = document.querySelector("#current-time");
+const progressBar = document.querySelector("#progress-bar")
 
 
 window.addEventListener("load", () => {
     let currentlyPlaying = musicPlayer.getSong();
     displaySong(currentlyPlaying);
 })
+
 
 play.addEventListener("click", () => {
     const isSongPlaying = container.classList.contains("playing");
@@ -51,12 +55,31 @@ function nextSong() {
     musicPlayer.next();
     currentlyPlaying = musicPlayer.getSong();
     displaySong(currentlyPlaying);
-    audio.play();
+    playSong();
 }
 
 function prevSong() {
     musicPlayer.previous();
     currentlyPlaying = musicPlayer.getSong();
     displaySong(currentlyPlaying);
-    audio.play();
+    playSong();
 }
+
+const calculateTime = (fullDuration) => {
+    const minute = Math.floor(fullDuration / 60);
+    const seconds = Math.floor(fullDuration % 60);
+    const updatedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`
+    const calculatedTime = `${minute}:${updatedSeconds}`;
+    return calculatedTime;
+
+}
+
+audio.addEventListener("loadedmetadata", () => {
+    duration.textContent = calculateTime(audio.duration);
+    progressBar.max = Math.floor(audio.duration);
+})
+
+audio.addEventListener("timeupdate", () => {
+    progressBar.value = Math.floor(audio.currentTime);
+    currentTime.textContent = calculateTime(progressBar.value);
+})
