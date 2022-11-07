@@ -59,7 +59,6 @@ document.querySelector(".option-list").addEventListener("click", function (e) {
     }
 })
 
-
 function getQuestions() {
     count = 30;
     //Getting Question
@@ -119,7 +118,6 @@ function countdown() {
     }
 
 }
-
 
 function nextButton() {
     if (quiz.questionIndex !== quiz.questions.length) {
