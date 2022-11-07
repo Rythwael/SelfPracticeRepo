@@ -13,6 +13,6 @@ class Song {
 
 const songs = [
     new Song("Hallelujah", "Pentatonix", "img/hallelujah-pentatonix.jpeg", "mp3/hallelujah-pentatonix.mp3"),
-    new Song("Akeboshi", "LiSA", "img/hallelujah-pentatonix.jpg", "mp3/hallelujah-pentatonix.mp3"),
-    new Song("Dokuz Yıl Öncesine Mektup", "Şanışer", "img/dokuz-yil-oncesine-mektup.jpg", "mp3/dokuz-yil-oncesine-mektup.mp3")
+    new Song("Akeboshi", "LiSA", "img/akeboshi-lisa.jpg", "mp3/akeboshi-lisa.mp3"),
+    new Song("Dokuz Yıl Öncesine Mektup", "Şanışer", "img/dokuz-yil-oncesine-mektup-saniser.jpg", "mp3/dokuz-yil-oncesine-mektup-saniser.mp3")
 ]

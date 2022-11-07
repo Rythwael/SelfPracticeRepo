@@ -16,7 +16,16 @@ window.addEventListener("load", () => {
 })
 
 play.addEventListener("click", () => {
-    audio.play();
+    const isSongPlaying = container.classList.contains("playing");
+    isSongPlaying ? pauseSong() : playSong();
+})
+
+prev.addEventListener("click", () => {
+    prevSong();
+})
+
+next.addEventListener("click", () => {
+    nextSong();
 })
 
 function displaySong(song) {
@@ -24,4 +33,30 @@ function displaySong(song) {
     singer.innerText = song.singer;
     image.src = song.img;
     audio.src = song.file;
+}
+
+function pauseSong() {
+    container.classList.remove("playing");
+    play.classList = "fa-solid fa-play";
+    audio.pause();
+}
+
+function playSong() {
+    container.classList.add("playing");
+    play.classList = "fa-solid fa-pause";
+    audio.play();
+}
+
+function nextSong() {
+    musicPlayer.next();
+    currentlyPlaying = musicPlayer.getSong();
+    displaySong(currentlyPlaying);
+    audio.play();
+}
+
+function prevSong() {
+    musicPlayer.previous();
+    currentlyPlaying = musicPlayer.getSong();
+    displaySong(currentlyPlaying);
+    audio.play();
 }
