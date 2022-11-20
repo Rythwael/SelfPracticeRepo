@@ -6,15 +6,11 @@ const nameInput = document.querySelector("#name");
 const departmentInput = document.querySelector("#department");
 const salaryInput = document.querySelector("#salary");
 const employeesList = document.querySelector("#employees");
+const updateEmployeeButton = document.querySelector("#update");
 
 const request = new Request("http://localhost:3000/employees");
-
-//request.get().then(employees => console.log(employees)).catch(err => { console.log(err) });
-//request.post({ name: "Hakan Taşıyan", department: "Business", salary: 10000 }).then(employee => console.log(employee)).catch(err => console.log(err));
-//request.put(3, { name: "Hasan Şaş", department: "IT", salary: 15000 }).then(employee => console.log(employee)).catch(err => console.log(err));
-//request.delete(4).then(msg => console.log(msg)).catch(err => console.log(err))
-
 const ui = new UI();
+let updateState = null;
 
 eventListeners();
 
@@ -22,6 +18,7 @@ function eventListeners() {
     document.addEventListener("DOMContentLoaded", getAllEmployees);
     form.addEventListener("submit", addEmployee);
     employeesList.addEventListener("click", editEmployee);
+    updateEmployeeButton.addEventListener("click", updateEmployee);
 
 }
 function getAllEmployees() {
@@ -29,6 +26,7 @@ function getAllEmployees() {
         ui.addEmployeesToUI(employees);
     }).catch(err => console.log(err));
 }
+
 function addEmployee(e) {
     const employeeName = nameInput.value.trim();
     const employeeDepartment = departmentInput.value.trim();
@@ -41,7 +39,6 @@ function addEmployee(e) {
         }).catch(err => console.log(err));
     }
 
-
     ui.clearInputs();
     e.preventDefault();
 }
@@ -49,14 +46,10 @@ function addEmployee(e) {
 function editEmployee(e) {
 
     if (e.target.id == "update-employee") {
-        updateEmployee(e.target.parentElement.parentElement);
+        updateEmployeeController(e.target.parentElement.parentElement);
     } else if (e.target.id == "delete-employee") {
-        deleteEmployee(e.target);
+        deleteEmployee(e.target.parentElement.parentElement);
     }
-}
-
-function updateEmployee(targetEmployee) {
-    let employee = targetEmployee.parentElement.previousElementSibling.textContent;
 }
 
 function deleteEmployee(targetEmployee) {
@@ -65,4 +58,28 @@ function deleteEmployee(targetEmployee) {
     request.delete(employeeID).then(msg => {
         ui.deleteEmployeeFromUI(targetEmployee.parentElement.parentElement);
     }).catch(err => console.log(err));
+}
+
+function updateEmployeeController(targetEmployee) {
+    ui.toggleUpdateButton(targetEmployee);
+    if (updateState === null) {
+        updateState = {
+            updateId: targetEmployee.children[3].textContent,
+            updateParent: targetEmployee
+        }
+    } else {
+        updateState = null;
+    }
+
+}
+
+function updateEmployee() {
+    if (updateState) {
+        let updatedData = {
+            name: nameInput.value.trim(), department: departmentInput.value.trim(),
+            salary: salaryInput.value.trim()
+        }
+        request.put(updateState.updateId, updatedData).then(updatedEmployee => ui.updateEmployeeOnUI(updatedEmployee, updateState.updateParent)).catch(err => console.log(err));
+
+    }
 }

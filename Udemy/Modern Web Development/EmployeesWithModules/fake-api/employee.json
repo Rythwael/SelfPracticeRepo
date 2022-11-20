@@ -1,10 +1,22 @@
 {
   "employees": [
     {
-      "name": "Oğuzhan Akça",
+      "name": "Büşra Pek",
       "department": "IT",
-      "salary": 5000,
+      "salary": "10000",
       "id": 1
+    },
+    {
+      "name": "Oğuzhan",
+      "department": "HR",
+      "salary": "10000",
+      "id": 2
+    },
+    {
+      "name": "Ağrı Dağı",
+      "department": "BR",
+      "salary": "10000",
+      "id": 3
     }
   ]
 }
